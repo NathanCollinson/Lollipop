@@ -12,9 +12,9 @@ import java.awt.Color;
  * Draw Little pictures on the graphics pane
  *
  * @author: Nathan Collinson
- * @version: 2
+ * @version: 3
  */
-public class Lollipop{
+public class Lollipop{ 
     public static final double X = 300.0;       //Horizontal center of lollipop
     public static final double Y = 180.0;         //Vertical center of lollipop
     public static final double SIZE = 80.0;       //Diameter of lollipop
@@ -30,12 +30,15 @@ public class Lollipop{
     UI.addButton("Quit", UI::quit);    // Comment out to checkstyle
     }
     private void drawLollipop(){
+        double left = X-SIZE/2.0;        //left of lollipop
+        double top = Y-SIZE/2.0;         //top of lollipop
+        double bottom = Y+STICK;         //bottom of lollipop 
         
-        UI.setLineWidth(SIZE/8.0);                //set line width to 10
-        UI.drawLine(X, Y, X, Y+STICK);    //draw line     (300, 200) to (300, 400)
-        UI.setLineWidth(1);                 //set line width to 1
-        UI.setColor(Color.red);             //set colour to red
-        UI.fillOval(X-SIZE/2.0, Y-SIZE/2.0, SIZE, SIZE);      //fill oval     @(260, 100), (80*50)
+        UI.setLineWidth(SIZE/8.0);                  //set line width to 10
+        UI.drawLine(X, Y, X, bottom);               //draw line     (300, 200) to (300, 400)
+        UI.setLineWidth(1);                         //set line width to 1
+        UI.setColor(Color.red);                     //set colour to red
+        UI.fillOval(left, top, SIZE, SIZE);         //fill oval     @(260, 100), (80*50)
         
     }
 
